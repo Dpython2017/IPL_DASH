@@ -51,7 +51,5 @@ urlpatterns = [
     url('get-venue-api',
         views.get_most_matches),
 
-    url('dash/',
-        views.Dashboard.as_view())
 ]
 urlpatterns += router.urls
