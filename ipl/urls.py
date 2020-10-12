@@ -3,6 +3,7 @@ from rest_framework.routers import DefaultRouter
 from .api import MatchAPI, TossAPI, YearsAPI, PlayerOfMatchAPI, MaxMatchAPI, LocationAPI, HighestMarginRunAPI, \
     HighestMarginWicketsAPI, TossWinnerAPI
 from . import views
+from rest_framework import permissions
 
 router = DefaultRouter()
 
@@ -50,6 +51,7 @@ urlpatterns = [
     url('get-venue-api',
         views.get_most_matches),
 
-
+    url('dash/',
+        views.Dashboard.as_view())
 ]
 urlpatterns += router.urls

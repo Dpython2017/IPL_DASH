@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'ipl',
     'corsheaders',
-    'drf_yasg',
+
 ]
 
 MIDDLEWARE = [
@@ -116,9 +116,7 @@ REST_FRAMEWORK = {
     ],
 
 }
-SWAGGER_SETTINGS = {
-    "DEFAULT_GENERATOR_CLASS": "rest_framework.schemas.generators.BaseSchemaGenerator",
-}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
