@@ -12,6 +12,16 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+environ.Env.read_env()
+
+# False if not in os.environ
+DEBUG = env('DEBUG')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,10 +29,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '07ky4^@$#svq=uo8yd$e0(p5kn2wozd&-ey2w@#z%_6#m3mo!$'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -117,7 +127,12 @@ REST_FRAMEWORK = {
 
 }
 
-
+# CACHES = {
+#     # read os.environ['CACHE_URL'] and raises ImproperlyConfigured exception if not found
+#     'default': env.cache(),
+#     # read os.environ['REDIS_URL']
+#     'redis': env.cache('REDIS_URL')
+# }
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
