@@ -25,23 +25,23 @@ router.register('player-match-api',
 
 router.register('max-match-api',
                 MaxMatchAPI,
-                basename='player-match')
+                basename='max-match')
 
 router.register('location-api',
                 LocationAPI,
-                basename='player-match')
+                basename='location')
 
 router.register('highest-margin-api',
                 HighestMarginRunAPI,
-                basename='player-match')
+                basename='highest-margin')
 
 router.register('highest-wicket-api',
                 HighestMarginWicketsAPI,
-                basename='player-match')
+                basename='highest-wicket')
 
 router.register('toss-winner',
                 TossWinnerAPI,
-                basename='player-match')
+                basename='toss-winner')
 
 urlpatterns = [
     url('bating-api/',
