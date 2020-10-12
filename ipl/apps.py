@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class IplConfig(AppConfig):
-    name = 'ipl'
+class BackendConfig(AppConfig):
+    name = 'backend'
